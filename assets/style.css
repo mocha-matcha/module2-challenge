@@ -1,43 +1,168 @@
+:root
+{
+
+	--background:#f7efe9;
+	--background-text:#322b2b;
+	--foreground:#de9270;
+	--foreground-text:#2d322b;
+	--accent:#374a3e;
+
+}
+
+
 body
 {
-background-color:white;
-color: rgb(51, 97, 51);
+
+font-family: 'Courier New', Courier, monospace;
+background-color:var(--background);
+color:var(--background-text);
+}
+
+p,header,footer,.flex-child
+{
+
+padding: 1vh;
+}
+
+header,.flex-child,footer
+{
+
+ background-color: var(--foreground);
+color: var(--foreground-text);
+	transition: 0.5s;
+	border-width: 2vw;
+	border-radius: 1vw;
+}
+
+a{
+color: var(--foreground-text);
+transition: 0.5s;
+}
+
+a:hover
+{
+color: var(--background);
 }
 
 header
 {
   position: sticky;
   top: 0;
-  background-color: antiquewhite;
   display: flex;
   gap: 2vw;
+  align-items: center;
+
+ }
+
+ nav
+ {
+display: flex;
+gap: 2vw;
+ }
+
+.sidebar
+ {
+writing-mode: vertical-lr;
 }
 
-section:first-child{
-  background-color: bisque;
-  color: brown;
-flex-grow:4;
+footer,header
+{
+	margin: 1vh auto;
+	width: 95vw;
+}
+
+footer
+{
+text-align: center;
 }
 
 .flex{
 display: flex;
-flex-direction:row;
 flex-wrap: wrap;
-gap: 1vh;
+justify-content: space-evenly;
+gap: 1vw;
+max-width:95vw;
+margin: 2vw auto;
+align-items: center;
 }
-
-
-
 
 .flex-child
 {
-background-color:black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
+.flex-child:hover
+{
+background-color: var(--accent);
+color:var(--background)
+}
+
+.flex-child:first-child img
+{
+max-width: 95%;
+}
+
+.flex-child:not(:first-child) {
+  flex:45%;
+  
 }
 
 
 
+#about
+{
+width:95vw;
+margin: 2vw auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
+
+img,.hero
+{
+
+margin: 3% auto;
+}
+
+img
+{
+object-fit: contain;
+max-width: 80%;
+}
+
+.hero
+{
+background-image: url('./hero.jpg'); 
+background-size: contain;
+min-height: 50vh;
+min-width: 90vw;
+}
+
+h1,h2,h3
+{
+font-weight: bold;
+}
+h1
+{
+font-size:40px;
+}
+
+h2,h3
+{
+
+	text-decoration: underline;
+}
+
+h2
+{
+	font-size: 35px;
+}
+h3
+{
+font-size:20px;}
 
 @media only screen and (max-width:700px){
  
@@ -47,18 +172,5 @@ background-color:black;
     flex-wrap: wrap;
     gap: 1vh;
     }
-    
-    
-    
-    .flex:first-child
-    {
-    flex-grow:4;
-    }
-    
-    
-    .flex-child
-    {
-    background-color:black;
-    
-    }
+  
 }
